@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+// Return the Count of number is Range [l, r]
+int getCount(int l, int r, multiset<int> &s) {
+    int countInRange = distance(s.lower_bound(l), s.upper_bound(r));
+    return countInRange;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_multisetRangeQuery</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

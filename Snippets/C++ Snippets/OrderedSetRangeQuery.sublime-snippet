@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+int queryRange( ordered_set<int> &os, int l, int r) {
+    int lPos = os.order_of_key(l);
+    int rPos = os.order_of_key(r + 1);  
+    return rPos - lPos;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_orderedsetquery</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

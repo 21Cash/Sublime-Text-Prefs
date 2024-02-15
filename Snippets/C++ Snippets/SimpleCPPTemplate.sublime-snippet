@@ -1,0 +1,42 @@
+<snippet>
+	<content><![CDATA[
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+const int N = 0;
+
+$1
+
+void Solution(){
+        
+    $2
+    
+}
+
+
+signed int main(){
+    
+    #ifndef ONLINE_JUDGE
+    // freopen("input.txt", "r", stdin);
+    // freopen("output.txt", "w", stdout);
+    // freopen("error.txt", "w", stderr);
+    #endif
+    
+    ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+    
+    int t = 1;
+    //cin >> t;
+    while(t--){
+        Solution();
+    }
+    return 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>cctemplate</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

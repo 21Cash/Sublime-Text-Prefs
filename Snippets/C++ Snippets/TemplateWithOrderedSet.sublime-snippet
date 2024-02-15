@@ -1,0 +1,55 @@
+<snippet>
+	<content><![CDATA[
+#include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+
+using namespace std;
+using namespace __gnu_pbds;
+
+#define ll long long
+#define debug(x) cout << #x  << " : " << x << "\n";
+#define all(C) C.begin(), C.end()
+//#define int ll
+
+void dbg() { std::cout << std::endl; } template <typename T, typename... Args> void dbg(const T& first, const Args&... args) { std::cout << first << " "; dbg(args...); }
+template<typename T> istream& operator>>(istream& in, vector<T>& a) {for(auto &x : a) in >> x; return in;};
+template<typename T> ostream& operator<<(ostream& out, vector<T>& a) {for(auto &x : a) out << x << ' '; return out;};
+template<typename T1, typename T2> ostream& operator<<(ostream& out, const pair<T1, T2>& x) {return out << x.first << ' ' << x.second;}
+template<typename T1, typename T2> istream& operator>>(istream& in, pair<T1, T2>& x) {return in >> x.first >> x.second;}
+
+template <typename T> using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
+const long long INF = 1e18;
+
+$1
+
+void test_case() {
+	
+	$2
+	
+}
+
+signed main() {
+    // freopen("input.txt", "r", stdin);
+    // freopen("output.txt", "w", stdout);
+    // freopen("error.txt", "w", stderr);
+	
+	ios::sync_with_stdio(false);
+	cin.tie(0); 
+	
+	int t = 1;
+	//cin >> t;
+	for(int i = 1; i <= t; i++) {
+		test_case();
+	}
+	return 0;
+}
+]]>
+	
+</content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>tordered</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

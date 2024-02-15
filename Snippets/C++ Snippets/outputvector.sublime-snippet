@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+int _s = ${1:v}.size();
+int _t = 0;
+
+while(_t < _s) {
+	cout<<${2:v}[_t]<<" ";
+	_t++;
+}
+$3
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ov</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

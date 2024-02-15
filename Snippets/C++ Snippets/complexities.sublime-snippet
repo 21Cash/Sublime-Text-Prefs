@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+/* Complexities
+
+Time Complexity : O($1)
+
+Space Complexity : O($2)
+
+*/
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_complexities</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

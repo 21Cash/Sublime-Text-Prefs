@@ -1,0 +1,40 @@
+<snippet>
+	<content><![CDATA[
+//Prints BST In Level Order Traversal (BFS)
+void PrintTree(TreeNode* root) {
+    queue<TreeNode*> q;
+    q.push(root);
+    q.push(NULL);
+    
+    while(!q.empty()) {
+        
+        TreeNode* ref = q.front();
+        if(ref)
+            cout << ref->val << " ";
+        q.pop();
+        
+        if(ref != NULL) {
+            if(ref->left) {
+                q.push(ref->left);
+            }
+            if(ref->right) {
+                q.push(ref->right);
+            }
+        } 
+        else {
+            cout << "\n";
+            if(!q.empty()) {
+                q.push(NULL);
+            }
+        }
+        
+        
+    }
+    
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_printtree</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

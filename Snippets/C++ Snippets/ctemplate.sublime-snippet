@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+#include <stdio.h>
+
+#define cout printf
+#define cin scanf
+#define rep(i,a,b) for (int i = a; i < b; i++)
+
+void Solution() {	
+	
+	$1
+		
+}
+
+int main() {
+
+	Solution();
+	return 0;
+	
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ctemplate</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

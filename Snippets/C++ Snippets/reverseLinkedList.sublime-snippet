@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+ListNode* reverseList(ListNode* head) {
+    ListNode *nextNode, *prevNode = NULL;
+    while (head) {
+        nextNode = head->next;
+        head->next = prevNode;
+        prevNode = head;
+        head = nextNode;
+    }
+    return prevNode;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_reverseLinkedList</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

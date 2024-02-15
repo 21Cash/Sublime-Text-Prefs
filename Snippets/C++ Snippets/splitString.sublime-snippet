@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+vector<string> splitString(string &str, char sep) {
+    stringstream ss(str);
+    vector<string> words;
+    string word = "";
+    while(getline(ss, word, sep)) {
+        if(word.size() > 0) words.push_back(word);
+    }
+    return words;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_splitString</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

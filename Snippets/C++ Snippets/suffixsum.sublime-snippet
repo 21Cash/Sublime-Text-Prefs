@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+vector<long long> getSuff(vector<int> &nums) {
+    int n = nums.size();
+    vector<long long> suff(n+1, 0);
+    for(int i = n-1; i >= 0; i--) {
+        suff[i] = suff[i+1] + nums[i];
+    }
+    return suff;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_suffixsum</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

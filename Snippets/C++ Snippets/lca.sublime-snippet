@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+TreeNode* LCA(TreeNode* root, TreeNode* p, TreeNode* q) {
+    if(!root) return root;
+    if(root == p || root == q) return root;
+
+    TreeNode* left = LCA(root->left, p, q);
+    TreeNode* right = LCA(root->right, p, q);
+
+    if(left && !right) return left;
+    if(right && !left) return right;
+    if(left && right) return root;
+    return nullptr;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_lca</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

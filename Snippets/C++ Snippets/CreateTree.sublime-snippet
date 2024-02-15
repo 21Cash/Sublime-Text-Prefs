@@ -1,0 +1,42 @@
+<snippet>
+	<content><![CDATA[
+//Creates BST From Level Order (BFS)
+TreeNode* CreateTree() {
+    int rootVal;
+    cin >> rootVal;
+    if(rootVal == -1) return nullptr;
+    TreeNode* root = new TreeNode(rootVal);
+    
+    queue<TreeNode*> q;
+    q.push(root);
+    
+    while (!q.empty()) {
+    
+        TreeNode* cur = q.front();
+        q.pop();
+        
+        int l;
+        cin >> l;
+        
+        if (l != -1) {
+            cur->left = new TreeNode(l);
+            q.push(cur->left);
+        }
+        
+        int r;
+        cin >> r;
+        if (r != -1) {
+            cur->right = new TreeNode(r);
+            q.push(cur->right);
+        }
+        
+    }
+    
+    return root;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_createtree</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

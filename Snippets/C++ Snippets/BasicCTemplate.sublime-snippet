@@ -1,0 +1,26 @@
+<snippet>
+	<content><![CDATA[
+#include <stdio.h>
+#define bool int
+#define true 1
+#define false 0
+
+
+void Solution() {
+	
+	$1
+	
+}
+
+int main() {
+	
+	Solution();
+	
+	return 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_ctemplate</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

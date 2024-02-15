@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[
+vector<int> getFactors(int x) {
+    vector<int> factors;
+    for (int i = 1; i <= sqrt(x); ++i) {
+        if (x % i == 0) {
+            factors.push_back(i);
+            if (i != x / i) {
+                factors.push_back(x / i);
+            }
+        }
+    }
+    return factors;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_factors</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

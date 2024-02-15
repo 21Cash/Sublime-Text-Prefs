@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+void ReadFile(string &str) {
+	std::ifstream t("input.txt");
+	std::stringstream buffer;
+	buffer << t.rdbuf();
+	str = buffer.str();
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_readfile</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
