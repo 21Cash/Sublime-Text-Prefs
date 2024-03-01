@@ -3,12 +3,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+const bool MTC = ${1:1};
+
 #define ll long long
 #define int long long
 #define debug(x) cout << #x  << " : " << x << "\n";
 #define all(C) C.begin(), C.end()
 #define getunique(v) {sort(all(v)); v.erase(unique(v.begin(), v.end()), v.end());}
-#define nline '\n'
+#define nl '\n'
+#define toLongLong(vec) vector<long long>((vec).begin(), (vec).end())
 
 void dbg() { std::cout << std::endl; } template <typename T, typename... Args> void dbg(const T& first, const Args&... args) { std::cout << first << " "; dbg(args...); }
 template<typename T1, typename T2> ostream& operator<<(ostream& out, const pair<T1, T2>& x) {return out << x.first << ' ' << x.second;}
@@ -20,15 +23,17 @@ ll lcm(ll a,ll b) { return a * b / __gcd(a, b); }
 
 const long long INF = 1e18;
 const long long mod = 1e9 + 7;
-$1
+
+$2
 
 void test_case() {
 	
-	$2
+	$3
 	
 }
 
 signed main() {
+
     // freopen("input.txt", "r", stdin);
     // freopen("output.txt", "w", stdout);
     // freopen("error.txt", "w", stderr);
@@ -37,7 +42,7 @@ signed main() {
 	cin.tie(0); 
 	
 	int t = 1;
-	//cin >> t;
+	if(MTC) cin >> t;
 	for(int i = 1; i <= t; i++) {
 		test_case();
 	}
