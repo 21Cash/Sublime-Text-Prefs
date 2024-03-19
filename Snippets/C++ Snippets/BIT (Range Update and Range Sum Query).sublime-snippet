@@ -1,0 +1,71 @@
+<snippet>
+	<content><![CDATA[
+// BIT (Range Update and Range Sum Query)
+class BIT {
+private:
+    vector<long long> B1, B2;
+    int N;
+
+    void add(vector<long long>& b, int idx, long long x) {
+        while (idx < N) {
+            b[idx] += x;
+            idx |= idx + 1;
+        }
+    }
+
+    long long sum(const vector<long long>& b, int idx) {
+        long long total = 0;
+        while (idx >= 0) {
+            total += b[idx];
+            idx = (idx & (idx + 1)) - 1;
+        }
+        return total;
+    }
+
+public:
+    BIT(int size) {
+        N = size;
+        B1.assign(N, 0);
+        B2.assign(N, 0);
+    }
+    
+    BIT(const vector<long long>& arr) {
+        N = arr.size();
+        B1.assign(N, 0);
+        B2.assign(N, 0);
+        for (int i = 0; i < N; ++i) {
+            range_add(i, i, arr[i]);
+        }
+    }
+
+    void init(int size) {
+        N = size;
+        B1.assign(N, 0);
+        B2.assign(N, 0);
+    }
+
+    void range_add(int l, int r, long long x) {
+        add(B1, l, x);
+        add(B1, r + 1, -x);
+        add(B2, l, x * l);
+        add(B2, r + 1, -x * (r + 1));
+    }
+
+    long long prefix_sum(int idx) {
+        return sum(B1, idx) * (idx + 1) - sum(B2, idx);
+    }
+    
+    long long range_sum(int l, int r) {
+        return prefix_sum(r) - prefix_sum(l - 1);
+    }
+    
+    long long get(int idx) {
+        return range_sum(idx, idx);
+    }
+};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_BIT</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

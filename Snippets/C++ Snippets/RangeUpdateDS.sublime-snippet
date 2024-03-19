@@ -1,0 +1,38 @@
+<snippet>
+	<content><![CDATA[
+struct RangeUpdateDS {
+	vector<ll> A, pref;
+	
+	void init(vector<ll> &inititalArray) {
+		A = inititalArray;
+		pref.resize(inititalArray.size() + 1, 0LL);
+	}
+	
+	RangeUpdateDS(vector<ll> &inititalArray) {
+		init(inititalArray);
+	}
+	
+	void updateRange(int l, int r, ll delta) {
+		pref[l] += delta;
+		pref[r + 1] -= delta;
+	}
+	
+	void calcArray() {
+		for(int i = 1; i <= A.size(); i++) {
+			pref[i] += pref[i - 1];
+		}
+		for(int i = 0; i < A.size(); i++) {
+			A[i] += pref[i];
+		}
+	}
+	
+	vector<ll> getArray() {
+		return A;
+	}
+};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_rangeupdateDS</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
