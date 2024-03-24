@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-auto ${1:solve} = y_combinator([&] (auto ${1:solve}, ${2:/*Args*/}) -> $3 {      
+auto ${1:solve} = y_combinator([&] (auto ${1:solve}, ${2:/*Args*/}) -> ${3:/*Return Type*/} {      
 	$4
 });
 ]]></content>

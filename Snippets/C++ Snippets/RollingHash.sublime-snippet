@@ -37,13 +37,15 @@ struct PolyHash{
 
         int n = ar.size();
         assert(n < MAXLEN);
-        pref.resize(n + 3, 0), suff.resize(n + 3, 0);
+        pref.resize(n + 3, 0);
 
         for (int i = 1; i <= n; i++){
             pref[i] = modmul(pref[i - 1], base) + ar[i - 1] + 997;
             if (pref[i] >= mod) pref[i] -= mod;
         }
-
+        
+        /* Comment out Below Part if rev_hash isnt being called */
+        suff.resize(n + 3, 0);
         for (int i = n; i >= 1; i--){
             suff[i] = modmul(suff[i + 1], base) + ar[i - 1] + 997;
             if (suff[i] >= mod) suff[i] -= mod;
