@@ -1,0 +1,77 @@
+<snippet>
+	<content><![CDATA[
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+
+
+struct ordered_multiset {
+    template <typename T> using ordered_set = tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
+    ordered_set<ll> sl;
+    
+    bool contains(ll x) {
+        if((sl.upper_bound(x))==sl.end()){
+            return 0;
+        }
+        return ((*sl.upper_bound(x))==x);
+    }  
+    
+    void insert(ll x) {
+        sl.insert(x);
+    }
+    
+    void eraseOne(ll x) {
+        if(!contains(x)) {
+            cerr << x << " Not Present, Deletion Failed.";
+            return;
+        }
+        
+        sl.erase(sl.find_by_order(sl.order_of_key(x)));
+    }
+    
+    void eraseAll(ll x) {
+        if(!contains(x)) {
+            cerr << x << " Not Present, Deletion Failed.";
+            return;
+        }
+        
+        sl.erase(x);
+    }
+    
+    void clear() {
+        sl.clear();
+    }
+    
+    int size() {
+        return (int) sl.size();
+    }
+    
+    // Returns first index where 'x' present
+    int getFirstIndex(ll x) {
+        if(!contains(x)) {
+            cerr << x << " Not Present, Deletion Failed.";
+            return -1;
+        }
+        
+        return sl.order_of_key(x); 
+    }
+    
+    ll getValue(ll index) {
+        return (*sl.find_by_order(index));
+    }
+    
+    // Returns the Number of items in range [l, r]
+    int getCount(ll l, ll r) {
+        int lPos = sl.order_of_key(l);
+        int rPos = sl.order_of_key(r + 1);  
+        return rPos - lPos;
+    }    
+};
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>_customOrderedMultiset</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
