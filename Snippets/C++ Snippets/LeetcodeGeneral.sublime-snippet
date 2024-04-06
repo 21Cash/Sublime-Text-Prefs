@@ -74,6 +74,7 @@ template<class T> bool ckmax(T&a, const T& b) { bool B = a < b; a = max(a,b); re
 #define nl '\n'
 #define toLongLong(vec) vector<long long>((vec).begin(), (vec).end())
 #define calcSum(vec) std::accumulate(vec.begin(), vec.end(), 0LL)
+#define sz(C) (int) C.size() 
 
 long long ceilDiv(long long x, long long y) { return (x + y - 1) / y; }
 void debug() { std::cout << std::endl; } template <typename T, typename... Args> void debug(const T& first, const Args&... args) { std::cout << first << " "; debug(args...); }
