@@ -1,14 +1,11 @@
 <snippet>
 	<content><![CDATA[
-// Return True if a comes before b, return False if equal 
-struct compare {
-	bool operator() (const ${1:/*Type*/} &a, const ${1:/*Type*/} &b) const {
-		${2}
-	}
-};
+#include <bits/stdc++.h>
+using namespace std;
+
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>_comparator</tabTrigger>
+	<tabTrigger>_include</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<!-- <scope>source.python</scope> -->
 </snippet>
