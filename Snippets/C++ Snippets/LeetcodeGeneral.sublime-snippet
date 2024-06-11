@@ -3,22 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Single TC Template
-
-struct safe_hash {
-    static uint64_t splitmix64(uint64_t x) {
-        // http://xorshift.di.unimi.it/splitmix64.c
-        x += 0x9e3779b97f4a7c15;
-        x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
-        x = (x ^ (x >> 27)) * 0x94d049bb133111eb;
-        return x ^ (x >> 31);
-    }
-
-    size_t operator()(uint64_t x) const {
-        static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();
-        return splitmix64(x + FIXED_RANDOM);
-    }
-};
+/* Multi Test Case Template */
 
 // ******************Debug Template*********************
 
@@ -73,20 +58,51 @@ void _print(T t, V... v) {
 template<class T> bool ckmin(T&a, const T& b) { bool B = a > b; a = min(a,b); return B; }
 template<class T> bool ckmax(T&a, const T& b) { bool B = a < b; a = max(a,b); return B; }
 
+// Comment Out Below Lines To Stop Debugging
+#define DEBUG_OUT
 
-// NOTE : If Debugging in Leetcode, Replace (__LINE__) With (__LINE__ - 9)
+
+#ifdef DEBUG_OUT
+
 #define dbg(x...)                                                            \
+    cout << "[" << #x << "] = ["; \
+    _print(x);                                                               \
+    // cout << endl;
+
+// FULL Debug With Func and Line Number
+// NOTE : If Debugging in Leetcode, Replace (__LINE__) With (__LINE__ - 9)
+#define f_dbg(x...)                                                            \
     cout << "[" << __func__ << ":" << (__LINE__)  << " [" << #x << "] = ["; \
     _print(x);                                                               \
-    cout << endl;
-
+    // cout << endl;
+#else
     
+#define dbg(x...)
+#define f_dbg(x...)
+
+#endif  
+  
 // ******************Debug Template Ends*********************
+    
+// Safe Hash
+struct safe_hash {
+    static uint64_t splitmix64(uint64_t x) {
+        x += 0x9e3779b97f4a7c15;
+        x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
+        x = (x ^ (x >> 27)) * 0x94d049bb133111eb;
+        return x ^ (x >> 31);
+    }
+
+    size_t operator()(uint64_t x) const {
+        static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();
+        return splitmix64(x + FIXED_RANDOM);
+    }
+};
 
 #define ll long long
 #define all(C) C.begin(), C.end()
 #define getunique(v) {sort(all(v)); v.erase(unique(v.begin(), v.end()), v.end());}
-#define nl '\n'
+#define nline cout << "\n";
 #define toLongLong(vec) vector<long long>((vec).begin(), (vec).end())
 #define calcSum(vec) std::accumulate(vec.begin(), vec.end(), 0LL)
 #define sz(C) (int) C.size() 
@@ -122,12 +138,8 @@ signed main() {
     ios::sync_with_stdio(false);
     cin.tie(0); 
     
-    int t = 1;
-    for(int i = 1; i <= t; i++) {
-        test_case();
-    }
-    return 0;
-}
+    test_case();
+} 
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>tl</tabTrigger>
