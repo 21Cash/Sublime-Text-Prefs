@@ -79,7 +79,7 @@ template<class T> bool ckmax(T&a, const T& b) { bool B = a < b; a = max(a,b); re
     
 #else
 
-#define dout 
+#define dout if (false) std::cout
 #define dbg(x...)
 #define f_dbg(x...)
 
