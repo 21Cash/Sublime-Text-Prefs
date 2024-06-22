@@ -14,7 +14,9 @@ vector<int> dijkstra(int src, vector<vector<pair<int, int>>> &adj) {
         int curDist = pq.top().first;
         int curNode = pq.top().second;
         pq.pop();
-
+            
+        if(dist[curNode] < curDist) continue;
+        
         for(auto &edge : adj[curNode]) {
             int adjNode = edge.first;
             int wt = edge.second;

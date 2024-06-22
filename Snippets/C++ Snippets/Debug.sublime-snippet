@@ -1,6 +1,9 @@
 <snippet>
 	<content><![CDATA[
-// ******************Debug Template*********************
+// --------------------- Debug Template ----------------------------
+
+#define DEBUG_OUT
+// #define DEBUG_TC_NUM
 
 void __print(int x) { cout << x; }
 void __print(long x) { cout << x; }
@@ -54,15 +57,30 @@ template<class T> bool ckmin(T&a, const T& b) { bool B = a > b; a = min(a,b); re
 template<class T> bool ckmax(T&a, const T& b) { bool B = a < b; a = max(a,b); return B; }
 
 
-// NOTE : If Debugging in Leetcode, Replace (__LINE__) With (__LINE__ - 9)
+#ifdef DEBUG_OUT
+
+#define dout std::cout
+
 #define dbg(x...)                                                            \
+    cout << "[" << #x << "] = ["; \
+    _print(x);                                                               \
+    // cout << endl;
+
+// NOTE : If Debugging in Leetcode, Replace (__LINE__) With (__LINE__ - 9)
+#define f_dbg(x...)                                                            \
     cout << "[" << __func__ << ":" << (__LINE__)  << " [" << #x << "] = ["; \
     _print(x);                                                               \
-    cout << endl;
-
+    // cout << endl;
     
-// ******************Debug Template Ends*********************
+#else
 
+#define dout 
+#define dbg(x...)
+#define f_dbg(x...)
+
+#endif  
+  
+// -------------------------- Debug Template Ends --------------------------------------
 
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->

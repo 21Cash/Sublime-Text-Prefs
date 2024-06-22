@@ -22,7 +22,7 @@ public:
         }
     }
 
-    ll queryMax(ll low, ll high) {
+    ll query_max(ll low, ll high) {
         ll k = (log2(high - low + 1));
         return max(table[low][k], table[high - (1 << k) + 1][k]);
     }
