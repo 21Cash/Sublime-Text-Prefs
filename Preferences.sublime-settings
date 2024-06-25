@@ -2,9 +2,11 @@
 	"color_scheme": "Packages/Devastate/Devastate.tmTheme",
 	"ignored_packages":
 	[
-		"Vintage"
+		"Vintage",
 	],
 	"index_files": true,
-	"theme": "Adaptive.sublime-theme",
-	"trim_automatic_white_space": false
+	"theme": "Default Dark.sublime-theme",
+	"trim_automatic_white_space": false,
+	"caret_style" : "phase",
+	"font_size": 12,
 }

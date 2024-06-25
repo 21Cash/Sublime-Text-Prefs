@@ -3,8 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/* Multi Test Case Template */
-
+const bool single_tc = ${1:false};
 
 // --------------------- Debug Template ----------------------------
 
@@ -127,7 +126,6 @@ ll lcm(ll a,ll b) { return a * b / __gcd(a, b); }
 const long long INF = 1e18;
 const long long mod = 1e9 + 7;
 
-$1
 
 void test_case(int tc) {
 	
@@ -145,22 +143,24 @@ signed main() {
     cin.tie(0); 
     
     int t = 1;
-    cin >> t;
+    if(!single_tc) cin >> t;
+    
     for(int i = 1; i <= t; i++) {
         
         #ifdef DEBUG_TC_NUM
-        cout << "--- Case #" << i <<  " start ---\n";
+        cout << "\n--- Case #" << i <<  " start ---\n";
         #endif
         
         test_case(i);
         
         #ifdef DEBUG_TC_NUM
-        cout << "--- Case #" << i <<  " end ---\n";
+        cout << "\n--- Case #" << i <<  " end ---\n";
         #endif
         
     }
     return 0;
-} 
+}
+
 ]]>
 	
 </content>

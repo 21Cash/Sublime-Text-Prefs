@@ -1,0 +1,21 @@
+[
+    {
+        "keys": ["ctrl+shift+["],
+        "command": "go_to_line",
+        "args": {"line": 8}
+    },
+    {
+        "keys": ["ctrl+shift+f"],
+        "command": "go_to_function_body",
+        "args": {"function_name": "test_case"}
+    },
+    
+    { 
+        "keys": ["ctrl+alt+,"],
+        "command": "jump_back"
+    }, 
+    { 
+        "keys": ["ctrl+alt+."],
+        "command": "jump_forward" 
+    }
+]

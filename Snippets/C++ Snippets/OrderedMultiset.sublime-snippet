@@ -10,9 +10,9 @@ using namespace __gnu_pbds;
 // can Contain Duplicates
 template <typename T> using ordered_set = tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
-int queryRange(ordered_set<int> &os, int l, int r) {
-    int lPos = os.order_of_key(l);
-    int rPos = os.order_of_key(r + 1);  
+ll query_range(ordered_set<ll> &os, ll l, ll r) {
+    ll lPos = os.order_of_key(l);
+    ll rPos = os.order_of_key(r + 1);  
     return rPos - lPos;
 }
 
