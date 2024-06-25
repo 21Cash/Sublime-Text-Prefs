@@ -1,6 +1,6 @@
 [
     {
-        "keys": ["ctrl+shift+["],
+        "keys": ["ctrl+alt+/"],
         "command": "go_to_line",
         "args": {"line": 8}
     },
