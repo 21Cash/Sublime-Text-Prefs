@@ -1,0 +1,38 @@
+<snippet>
+<!--
+    Fields: $field_number or ${field_number:default_text}, e.g. $1 or ${1:name}
+    Variables: $variable or ${variable/regex/replace/flags}, e.g. $TM_FILEPATH
+    More: https://www.sublimetext.com/docs/completions.html#snippets
+-->
+<content><![CDATA[
+// Rotates the given Grid 'K' Times
+vector<vector<ll>> rotate_grid(const vector<vector<ll>>& grid, ll K, bool clockwise) {
+    int N = grid.size();
+    vector<vector<ll>> newGrid = grid;
+    K = K % 4; 
+    if (!clockwise) {
+        K = 4 - K; 
+    }
+
+    auto rotate90Clockwise = [](vector<vector<ll>> &grid) {
+        int N = grid.size();
+        vector<vector<ll>> newGrid(N, vector<ll>(N));
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                newGrid[j][N - 1 - i] = grid[i][j];
+            }
+        }
+        return newGrid;
+    };
+
+    for (int i = 0; i < K; i++) {
+        newGrid = rotate90Clockwise(newGrid);
+    }
+
+    return newGrid;
+}
+]]></content>
+<tabTrigger>_RotateGrid</tabTrigger>
+<description>Rotates the Grid in clockwise or anticlockwise K times</description>
+<scope>source.c++</scope>
+</snippet>
