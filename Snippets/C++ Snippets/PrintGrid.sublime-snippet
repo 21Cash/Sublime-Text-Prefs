@@ -1,0 +1,21 @@
+<snippet>
+<!--
+    Fields: $field_number or ${field_number:default_text}, e.g. $1 or ${1:name}
+    Variables: $variable or ${variable/regex/replace/flags}, e.g. $TM_FILEPATH
+    More: https://www.sublimetext.com/docs/completions.html#snippets
+-->
+<content><![CDATA[
+void print_grid(vector<vector<int>> &grid) {
+    int R = grid.size(), C = grid[0].size(); 
+    for(int r = 0; r < R; r++) {
+        for(int c = 0; c < C; c++) {
+            cout << grid[r][c] << " "; 
+        }
+        cout << "\n";
+    }
+}
+]]></content>
+<tabTrigger>_printGrid</tabTrigger>
+<description>Print the 2D Vector</description>
+<scope>source.c++</scope>
+</snippet>

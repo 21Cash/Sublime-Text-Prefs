@@ -118,7 +118,7 @@ void debug() { std::cout << std::endl; } template <typename T, typename... Args>
 typedef long long ll;
 typedef unsigned long long ull;
 #define all(C) C.begin(), C.end()
-#define getunique(v) {sort(all(v)); v.erase(unique(v.begin(), v.end()), v.end());}
+#define get_unique(v) {sort(v.begin(), v.end()); v.erase(unique(v.begin(), v.end()), v.end());}
 #define to_long_long(vec) vector<long long>((vec).begin(), (vec).end())
 #define sz(C) (int) C.size() 
 
@@ -128,8 +128,11 @@ template<typename T> istream& operator>>(istream& in, vector<T>& a) {for(auto &x
 template<typename T> ostream& operator<<(ostream& out, vector<T>& a) {for(auto &x : a) out << x << ' '; return out;};
 template<class T> using min_pq = priority_queue<T, vector<T>, greater<T>>;
 
+ll GCD(ll x, ll y) { if (x == 0) return y; if (y == 0) return x; return GCD(y, x % y); }
 ll ceil_div(ll x, ll y) { return (x + y - 1) / y; }
-ll lcm(ll a,ll b) { return a * b / __gcd(a, b); }
+ll lcm(ll a,ll b) { return a * b / GCD(a, b); }
+bool is_even(ll x) { return (x % 2 == 0); }
+bool is_odd(ll x) { return (x % 2 == 1); }
 
 const bool single_tc = ${2:false};
 const long long INF = 1e18;

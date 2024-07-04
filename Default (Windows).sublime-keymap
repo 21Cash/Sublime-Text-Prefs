@@ -2,7 +2,7 @@
     {
         "keys": ["ctrl+alt+/"],
         "command": "go_to_line",
-        "args": {"line": 8}
+        "args": {"line": 33}
     },
     {
         "keys": ["ctrl+shift+f"],

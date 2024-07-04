@@ -64,8 +64,6 @@ struct ordered_multiset {
     int count(num_t k) { return vals.order_of_key({k, 0}) - vals.order_of_key({k - 1, 0}); }
     auto lower_bound(num_t k) { return vals.lower_bound(make_pair(k - 1, 0)); }
     auto upper_bound(num_t k) { return vals.upper_bound(make_pair(k, 0)); }
-    
-    
 };
 
 /* -------------- Ordered_Multiset ------------------
