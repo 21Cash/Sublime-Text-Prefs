@@ -6,30 +6,27 @@
 -->
 <content><![CDATA[
 // Rotates the given Grid 'K' Times
-vector<vector<ll>> rotate_grid(const vector<vector<ll>>& grid, ll K, bool clockwise) {
-    int N = grid.size();
-    vector<vector<ll>> newGrid = grid;
-    K = K % 4; 
+vector<vector<ll>> rotate_grid(vector<vector<ll>> &grid, int K, bool clockwise) {
+    int rows = grid.size();
+    int cols = grid[0].size();
+
+    K %= 4;
     if (!clockwise) {
-        K = 4 - K; 
+        K = (4 - K) % 4; 
     }
 
-    auto rotate90Clockwise = [](vector<vector<ll>> &grid) {
-        int N = grid.size();
-        vector<vector<ll>> newGrid(N, vector<ll>(N));
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
-                newGrid[j][N - 1 - i] = grid[i][j];
+    for (int i = 0; i < K; ++i) {
+        vector<vector<ll>> newGrid(cols, vector<ll>(rows));
+        for (int r = 0; r < rows; ++r) {
+            for (int c = 0; c < cols; ++c) {
+                newGrid[c][rows - 1 - r] = grid[r][c];
             }
         }
-        return newGrid;
-    };
-
-    for (int i = 0; i < K; i++) {
-        newGrid = rotate90Clockwise(newGrid);
+        grid = newGrid;
+        swap(rows, cols);
     }
 
-    return newGrid;
+    return grid;
 }
 ]]></content>
 <tabTrigger>_RotateGrid</tabTrigger>
