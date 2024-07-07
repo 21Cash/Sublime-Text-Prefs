@@ -5,14 +5,9 @@
     More: https://www.sublimetext.com/docs/completions.html#snippets
 -->
 <content><![CDATA[
-
-ll lcm(ll a,ll b) { return a * b / __gcd(a, b); }
-
-const long long INF = 1e18;
-const long long mod = 1e9 + 7;
-
+memset(${1:cache}, -1, sizeof(${1:cache}));
 ]]></content>
-<tabTrigger></tabTrigger>
-<description></description>
-<scope>source.c++</scope>
+<tabTrigger>_memset</tabTrigger>
+<description>Memset dp Snippet</description>
+<scope>source.c++, meta.class.c++, meta.block.c++, meta.method.c++, meta.block.c++</scope>
 </snippet>

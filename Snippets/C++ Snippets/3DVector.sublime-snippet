@@ -1,9 +1,0 @@
-<snippet>
-	<content><![CDATA[
-vector<vector<vector<int>>> dp(${1:/*Dimension 1*/}, vector<vector<int>>(${2:/*Dimension 2*/}, vector<int>(${3:/*Dimension 3*/}, ${4:/*Value*/})));
-]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>_3dvector</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<!-- <scope>source.python</scope> -->
-</snippet>

@@ -17,7 +17,7 @@ struct MinBIT {
             update(i, a[i]);
     }
 
-    long long getmin(long long r) {
+    long long get_min(long long r) {
         long long ret = INF;
         for (; r >= 0; r = (r & (r + 1)) - 1)
             ret = min(ret, bit[r]);

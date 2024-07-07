@@ -44,7 +44,7 @@ uint64_t vector_hash(const vector<T>& ar) {
 }
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>_simpleHash</tabTrigger>
+	<tabTrigger>_simpleStringHash</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<!-- <scope>source.python</scope> -->
 </snippet>
