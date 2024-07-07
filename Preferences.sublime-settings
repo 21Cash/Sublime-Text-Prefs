@@ -8,5 +8,5 @@
 	"theme": "Default Dark.sublime-theme",
 	"trim_automatic_white_space": false,
 	"caret_style" : "phase",
-	"font_size": 11,
+	/*"font_size": 12,*/
 }

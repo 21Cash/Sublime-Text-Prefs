@@ -130,7 +130,6 @@ signed main() {
         test_case(i);
         // test_case(i) ? cout << "YES\n" : cout << "NO\n";
         
-        
         #ifdef DEBUG_TC_NUM
         cout << "\n";
         #endif
