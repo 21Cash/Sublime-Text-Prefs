@@ -1,8 +1,8 @@
 [
     {
-        "keys": ["ctrl+alt+/"],
-        "command": "go_to_line",
-        "args": {"line": 33}
+        "keys": ["ctrl+alt+/"], // Change this shortcut as needed
+        "command": "GoToLineCommand",
+        "line" : "64"
     },
     {
         "keys": ["ctrl+shift+f"],
