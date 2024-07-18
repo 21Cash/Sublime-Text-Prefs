@@ -17,5 +17,6 @@
     { 
         "keys": ["ctrl+alt+."],
         "command": "jump_forward" 
-    }
+    },
+    { "keys": ["ctrl+shift+r"], "command": "add_region" }
 ]

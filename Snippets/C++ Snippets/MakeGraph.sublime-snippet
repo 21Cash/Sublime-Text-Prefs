@@ -1,0 +1,26 @@
+<snippet>
+<!--
+    Fields: $field_number or ${field_number:default_text}, e.g. $1 or ${1:name}
+    Variables: $variable or ${variable/regex/replace/flags}, e.g. $TM_FILEPATH
+    More: https://www.sublimetext.com/docs/completions.html#snippets
+-->
+<content><![CDATA[
+vector<vector<int>> make_graph(int N, vector<vector<int>> &edges, bool directed = false) {
+    vector<vector<int>> adj(N);
+    
+    for(auto &edge : edges) {
+        int u = edge[0], v = edge[1];
+        
+        adj[u].push_back(v);
+        if(!directed) 
+            adj[v].push_back(u);
+    }
+    
+    return adj;
+}
+
+]]></content>
+<tabTrigger>_makeGraph</tabTrigger>
+<description>Given list of vertices, creates a graph</description>
+<scope>source.c++</scope>
+</snippet>
